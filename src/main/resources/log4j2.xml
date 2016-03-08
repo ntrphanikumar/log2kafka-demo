@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="Log2Kafka" packages="">
+  <Appenders>
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{dd-MM-yyyy HH:mm:ss} %-5p [%t] %c{1.}:%L - %m%n"/>
+    </Console>
+    
+    <Kafka name="Kafka" topic="log2kafka-demo">
+      <JsonLayout complete="true" compact="true" properties="true" locationInfo="true"/>
+      <Property name="bootstrap.servers">192.168.0.9:9092</Property>
+    </Kafka>
+  </Appenders>
+  <Loggers>
+    <Root level="WARN">
+      <AppenderRef ref="STDOUT"/>
+      <AppenderRef ref="Kafka"/>
+    </Root>
+    <Logger name="org.apache.kafka" level="INFO" />
+  </Loggers>
+</Configuration>
