@@ -7,7 +7,7 @@
     
     <Kafka name="Kafka" topic="log2kafka-demo">
       <JsonLayout complete="true" compact="true" properties="true" locationInfo="true"/>
-      <Property name="bootstrap.servers">192.168.0.9:9092</Property>
+      <Property name="bootstrap.servers">localhost:9092</Property>
     </Kafka>
   </Appenders>
   <Loggers>

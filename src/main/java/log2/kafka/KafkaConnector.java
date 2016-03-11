@@ -12,8 +12,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 public class KafkaConnector {
     public static void main(String[] args) throws InterruptedException, ExecutionException, TimeoutException {
         Properties props = new Properties();
-//        props.put("bootstrap.servers", "172.16.53.77:9092");
-        props.put("bootstrap.servers", "192.168.0.9:9092");
+        props.put("bootstrap.servers", "localhost:9092");
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.ByteArraySerializer");
         Producer<byte[], byte[]> producer = new KafkaProducer<byte[], byte[]>(props);
